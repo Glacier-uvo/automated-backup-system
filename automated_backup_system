@@ -1,0 +1,49 @@
+import sys
+import os
+from datetime import datetime
+import shutil
+
+def get_source():
+    if len(sys.argv) < 2:
+        print("error, no folder indicated")
+        exit()
+
+    source = sys.argv[1]
+
+    if not os.path.isdir(source):
+        print("folder not found")
+        exit()
+
+    return source
+
+def create_backup(source):
+    try:
+        date = datetime.now().strftime("%Y-%m-%d_%H-%M")
+        backup_file = f"amazonremote-{date}"
+        shutil.make_archive(backup_file, "gztar", source)
+        print(f"backup successfull: {backup_file}")
+    except Exception as e:
+        print("exiting, pipeline not broken")
+ except Exception as e:
+        print("exiting, pipeline not broken")
+        print(e)
+        exit()
+
+    return backup_file
+
+def logging_file(backup_file):
+    try:
+        with open("wednessday.log", "a") as log:
+            log.write(f"logging successfull: {backup_file}")
+            print("logging done")
+    except Exception as e:
+        print("logging failed, nothing breaks")
+        print(e)
+        exit()
+def main():
+    source = get_source()
+    backup_file = create_backup(source)
+    logging_file(backup_file)
+
+if __name__ == "__main__":
+    main()
