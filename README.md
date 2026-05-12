@@ -1,10 +1,10 @@
 Automated Backup System
-This project is a Python-based tool that automates folder backups. It creates compressed backups with timestamps and logs each operation.
+This project is a Python-based tool that automates folder backups. It creates compressed backups with timestamps and logs each operation with automatic scheduling.
 Features***
-- Backup folders from command line input- Automatically generates timestamped backup files- Compresses backups into ".tar.gz" format- Logs every backup operation- Basic error handling for invalid paths
+- Backup folders from command line input- Automatically generates timestamped backup files- Compresses backups into ".tar.gz" format- Logs every backup operation with automatic scheduling- Basic error handling for invalid paths
 ---
 How It Works***
-1. User provides a folder path2. Script validates the folder3. Creates a compressed backup4. Saves log entry in "backup.log"
+1. User provides a folder path. Script validates the folder. Creates a compressed backup. Saves log entry in "backup.log" and schedules backup automatically. 
 ---
 Usage
 python3 backup_script.py <folder_name>
@@ -23,4 +23,4 @@ This project demonstrates:
 - Automation scripting- File handling- Logging systems- CLI-based tools
 ---
 Future Improvements
-- Docker support- Scheduled backups (cron)- Cloud storage integration- CI/CD pipeline
+- Docker support-- Cloud storage integration- CI/CD pipeline
