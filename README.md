@@ -23,4 +23,5 @@ This project demonstrates:
 - Automation scripting- File handling- Logging systems- CLI-based tools
 ---
 Future Improvements
-- Docker support-- Cloud storage integration- CI/CD pipeline
+- Docker support-- CI/CD pipeline
+-- Cloud storage integration- 
